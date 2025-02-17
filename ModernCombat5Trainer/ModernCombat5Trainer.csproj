@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A40F0BAF-2C8A-444F-A49A-0967002E484E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ModernCombat5Trainer</RootNamespace>
+    <AssemblyName>ModernCombat5Trainer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameMemory\Cheats.cs" />
+    <Compile Include="GameMemory\DllPermission.cs" />
+    <Compile Include="GameMemory\InjectDll.cs" />
+    <Compile Include="GameMemory\Memory.cs" />
+    <Compile Include="GameMemory\Offsets.cs" />
+    <Compile Include="MsgInfo.xaml.cs">
+      <DependentUpon>MsgInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCores.xaml.cs">
+      <DependentUpon>ucCores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucDlls.xaml.cs">
+      <DependentUpon>ucDlls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMovements.xaml.cs">
+      <DependentUpon>ucMovements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucOthers.xaml.cs">
+      <DependentUpon>ucOthers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucPlayer.xaml.cs">
+      <DependentUpon>ucPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucWeapons.xaml.cs">
+      <DependentUpon>ucWeapons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponsList\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponsList\Page2.xaml.cs">
+      <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponsList\Page3.xaml.cs">
+      <DependentUpon>Page3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponsList\Page4.xaml.cs">
+      <DependentUpon>Page4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponsList\Page5.xaml.cs">
+      <DependentUpon>Page5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponsMessageBox.xaml.cs">
+      <DependentUpon>WeaponsMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CustomMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MsgInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ucCores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucDlls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucMovements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucOthers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucWeapons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeaponsList\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeaponsList\Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeaponsList\Page3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeaponsList\Page4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeaponsList\Page5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeaponsMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\bg.jpg" />
+    <Resource Include="Images\Backgrounds\bg2.jpg" />
+    <Resource Include="Images\Backgrounds\btnBg.jpg" />
+    <Resource Include="Images\Backgrounds\close.png" />
+    <Resource Include="Images\Backgrounds\gear.png" />
+    <Resource Include="Images\Backgrounds\MenuBorder.png" />
+    <Resource Include="Images\Backgrounds\minimize.png" />
+    <Resource Include="Images\Backgrounds\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Backgrounds\info2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Cores\armor piercer.png" />
+    <Resource Include="UserControls\Cores\evileye.png" />
+    <Resource Include="UserControls\Cores\HighPowered.png" />
+    <Resource Include="UserControls\Cores\impetum.png" />
+    <Resource Include="UserControls\Cores\murder blitz.png" />
+    <Resource Include="UserControls\Cores\sixthsense.png" />
+    <Resource Include="UserControls\Cores\snowflake.png" />
+    <Resource Include="UserControls\Cores\toxic area.png" />
+    <Resource Include="UserControls\Cores\yokai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WeaponsList\Images\weaponsui\%281%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2810%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2811%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2812%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2813%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2814%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2815%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2816%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2817%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2818%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2819%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%282%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2820%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2821%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2822%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2823%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2824%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2825%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2826%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2827%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2828%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2829%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%283%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2830%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2831%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2832%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2833%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2834%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2835%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2836%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2837%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2838%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2839%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%284%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2840%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2841%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2842%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2843%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2844%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%2845%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%285%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%286%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%287%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%288%29.png" />
+    <Resource Include="WeaponsList\Images\weaponsui\%289%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
